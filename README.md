@@ -1,7 +1,7 @@
 # Roskilde-frie-børnehave
 
 
-git init				//1
+	git init				//1
 	git remote add "navn" "uml"		//2
 	git add .				//3
 	git commit -m "besked"			//4
