@@ -7,8 +7,10 @@ public class Kindergarten extends FunctionHandler{
 
     public void run(){
         checkArraySizes();
-        for(int i = 0; employeeList.size() > i; i++){
+        System.out.println(employeeList.size());
+        System.out.println(childList.size());
+        /*for(int i = 0; employeeList.size() > i; i++){
             System.out.println(employeeList.size());
-        }
+        }*/
     }
 }

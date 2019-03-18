@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -96,7 +97,25 @@ public class FunctionHandler {
 	}
 
 	public void populateChilds(){
+		//make sure the array is empty
+		childList.clear();
 
+		try {
+			Scanner scan = new Scanner(new File("children.txt"));
+			do{
+				Object[] info = scan.nextLine().split(",");
+				childList.add(new Child(
+						info[0].toString(), //first name
+						info[1].toString(), //last name
+						Integer.parseInt(info[2].toString()), //cpr
+						Boolean.parseBoolean(info[3].toString()), //on waiting list
+						info[4].toString() //waiting list date
+				));
+			}while (scan.hasNextLine());
+
+		}catch (FileNotFoundException e){
+			System.out.println("Ingen fil fundet");
+		}
 	}
 
 	public void populateEmployees(){
