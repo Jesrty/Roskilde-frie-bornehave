@@ -1,1 +1,1 @@
-firstName,lastName,userName,password,phoneNumber,id,initials
+1,Sandra,Sand,sandra,1234,12345678,SS,true

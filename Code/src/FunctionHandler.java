@@ -1,4 +1,14 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class FunctionHandler {
+
+	List<Employee> employeeList = new ArrayList<Employee>();
+	List<Child> childList = new ArrayList<Child>();
+	List<Parent> parentList = new ArrayList<Parent>();
 
 	public void createChild() {
 		// TODO - implement FunctionHandler.createChild
@@ -6,7 +16,7 @@ public class FunctionHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param cpr
 	 */
 	public void editChild(int cpr) {
@@ -15,7 +25,7 @@ public class FunctionHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param cpr
 	 */
 	public void getChildInfo(int cpr) {
@@ -24,7 +34,7 @@ public class FunctionHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param child
 	 */
 	public void getPhoneList(boolean child) {
@@ -38,7 +48,7 @@ public class FunctionHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param id
 	 */
 	public void editEmployee(int id) {
@@ -47,7 +57,7 @@ public class FunctionHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param id
 	 */
 	public String getEmployee(int id) {
@@ -56,7 +66,7 @@ public class FunctionHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param week
 	 */
 	public void editSchedule(int week) {
@@ -65,12 +75,55 @@ public class FunctionHandler {
 	}
 
 	/**
-	 * 
+	 *
 	 * @param week
 	 */
 	public void viewSchedule(int week) {
 		// TODO - implement FunctionHandler.viewSchedule
 		throw new UnsupportedOperationException();
 	}
+
+	public void checkArraySizes(){
+		if(childList.size() == 0 && parentList.size() == 0 && employeeList.size() == 0){
+			populateChilds();
+			populateParents();
+			populateEmployees();
+		}
+	}
+
+	public void populateParents(){
+
+	}
+
+	public void populateChilds(){
+
+	}
+
+	public void populateEmployees(){
+		//make sure the array is empty
+		employeeList.clear();
+
+		try {
+			Scanner scan = new Scanner(new File("employees.txt"));
+			do{
+				Object[] info = scan.nextLine().split(",");
+				employeeList.add(new Employee(
+						info[0].toString(), //first name
+						info[1].toString(), //last name
+						info[2].toString(), //Username
+						info[3].toString(), //Password
+						Integer.parseInt(info[4].toString()), //phone number
+						Integer.parseInt(info[5].toString()), //id
+						info[6].toString(), //initials
+						Boolean.parseBoolean(info[7].toString()) //is admin
+				));
+			}while (scan.hasNextLine());
+
+		}catch (FileNotFoundException e){
+			System.out.println("Ingen fil fundet");
+		}
+	}
+
+
 
 }

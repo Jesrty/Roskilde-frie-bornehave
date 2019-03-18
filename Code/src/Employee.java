@@ -5,14 +5,16 @@ public class Employee extends Person {
 	private int phoneNumber;
 	private int id;
 	private String initials;
+	private boolean admin;
 
-	public Employee(String firstName, String lastName, String userName, String password, int phoneNumber, int id, String initials) {
+	public Employee(String firstName, String lastName, String userName, String password, int phoneNumber, int id, String initials, boolean admin) {
 		super(firstName, lastName);
 		this.userName = userName;
 		this.password = password;
 		this.phoneNumber = phoneNumber;
 		this.id = id;
 		this.initials = initials;
+		this.admin = admin;
 	}
 
 	public String getUserName() {
@@ -53,5 +55,13 @@ public class Employee extends Person {
 
 	public void setInitials(String initials) {
 		this.initials = initials;
+	}
+
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
 	}
 }
