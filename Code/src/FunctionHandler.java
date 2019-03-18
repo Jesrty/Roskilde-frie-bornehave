@@ -108,12 +108,12 @@ public class FunctionHandler {
 			do{
 				Object[] info = scan.nextLine().split(",");
 				employeeList.add(new Employee(
-						info[0].toString(), //first name
-						info[1].toString(), //last name
-						info[2].toString(), //Username
-						info[3].toString(), //Password
-						Integer.parseInt(info[4].toString()), //phone number
-						Integer.parseInt(info[5].toString()), //id
+						Integer.parseInt(info[0].toString()), //id
+						info[1].toString(), //first name
+						info[2].toString(), //last name
+						info[3].toString(), //Username
+						info[4].toString(), //Password
+						Integer.parseInt(info[5].toString()), //phone number
 						info[6].toString(), //initials
 						Boolean.parseBoolean(info[7].toString()) //is admin
 				));

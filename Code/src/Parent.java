@@ -2,11 +2,13 @@ public class Parent extends Person {
 
 	private int phoneNumber;
 	private String mail;
+	private int cpr;
 
-	public Parent(String firstName, String lastName, int phoneNumber, String mail) {
+	public Parent(String firstName, String lastName, int phoneNumber, String mail, int cpr) {
 		super(firstName, lastName);
 		this.phoneNumber = phoneNumber;
 		this.mail = mail;
+		this.cpr = cpr;
 	}
 
 	public int getPhoneNumber() {
@@ -23,5 +25,13 @@ public class Parent extends Person {
 
 	public void setMail(String mail) {
 		this.mail = mail;
+	}
+
+	public int getCpr() {
+		return cpr;
+	}
+
+	public void setCpr(int cpr) {
+		this.cpr = cpr;
 	}
 }
