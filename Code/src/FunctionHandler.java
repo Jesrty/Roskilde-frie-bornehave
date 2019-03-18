@@ -93,7 +93,25 @@ public class FunctionHandler {
 	}
 
 	public void populateParents(){
+		//make sure the array is empty
+		parentList.clear();
 
+		try {
+			Scanner scan = new Scanner(new File("children.txt"));
+			do{
+				Object[] info = scan.nextLine().split(",");
+				parentList.add(new Parent(
+						info[0].toString(), //first name
+						info[1].toString(), //last name
+						Integer.parseInt(info[2].toString()), //phone number
+						info[3].toString(), //mail
+						Integer.parseInt(info[4].toString()) //Child cpr
+				));
+			}while (scan.hasNextLine());
+
+		}catch (FileNotFoundException e){
+			System.out.println("Ingen fil fundet");
+		}
 	}
 
 	public void populateChilds(){
