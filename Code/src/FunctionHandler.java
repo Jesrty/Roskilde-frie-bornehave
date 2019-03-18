@@ -1,6 +1,5 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -31,6 +30,9 @@ public class FunctionHandler {
 	 */
 	public void getChildInfo(int cpr) {
 		// TODO - implement FunctionHandler.getChildInfo
+		for(int i = 0; childList.size() > i; i++){
+
+		}
 		throw new UnsupportedOperationException();
 	}
 
