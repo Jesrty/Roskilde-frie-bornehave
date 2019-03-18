@@ -7,63 +7,42 @@ public class Schedule {
 	private String shift;
 
 	public String getDay() {
-		return this.day;
+		return day;
 	}
 
-	/**
-	 * 
-	 * @param day
-	 */
 	public void setDay(String day) {
 		this.day = day;
 	}
 
 	public int getWeek() {
-		return this.week;
+		return week;
 	}
 
-	/**
-	 * 
-	 * @param week
-	 */
 	public void setWeek(int week) {
 		this.week = week;
 	}
 
 	public int getYear() {
-		return this.year;
+		return year;
 	}
 
-	/**
-	 * 
-	 * @param year
-	 */
 	public void setYear(int year) {
 		this.year = year;
 	}
 
 	public String getTime() {
-		return this.time;
+		return time;
 	}
 
-	/**
-	 * 
-	 * @param time
-	 */
 	public void setTime(String time) {
 		this.time = time;
 	}
 
 	public String getShift() {
-		return this.shift;
+		return shift;
 	}
 
-	/**
-	 * 
-	 * @param shift
-	 */
 	public void setShift(String shift) {
 		this.shift = shift;
 	}
-
 }

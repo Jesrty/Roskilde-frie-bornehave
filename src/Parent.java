@@ -3,28 +3,25 @@ public class Parent extends Person {
 	private int phoneNumber;
 	private String mail;
 
-	public int getPhoneNumber() {
-		return this.phoneNumber;
+	public Parent(String firstName, String lastName, int phoneNumber, String mail) {
+		super(firstName, lastName);
+		this.phoneNumber = phoneNumber;
+		this.mail = mail;
 	}
 
-	/**
-	 * 
-	 * @param phoneNumber
-	 */
+	public int getPhoneNumber() {
+		return phoneNumber;
+	}
+
 	public void setPhoneNumber(int phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
 	public String getMail() {
-		return this.mail;
+		return mail;
 	}
 
-	/**
-	 * 
-	 * @param mail
-	 */
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
-
 }

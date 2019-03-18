@@ -6,64 +6,52 @@ public class Employee extends Person {
 	private int id;
 	private String initials;
 
-	public String getUserName() {
-		return this.userName;
+	public Employee(String firstName, String lastName, String userName, String password, int phoneNumber, int id, String initials) {
+		super(firstName, lastName);
+		this.userName = userName;
+		this.password = password;
+		this.phoneNumber = phoneNumber;
+		this.id = id;
+		this.initials = initials;
 	}
 
-	/**
-	 * 
-	 * @param userName
-	 */
+	public String getUserName() {
+		return userName;
+	}
+
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
 
 	public String getPassword() {
-		return this.password;
+		return password;
 	}
 
-	/**
-	 * 
-	 * @param password
-	 */
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
 	public int getPhoneNumber() {
-		return this.phoneNumber;
+		return phoneNumber;
 	}
 
-	/**
-	 * 
-	 * @param phoneNumber
-	 */
 	public void setPhoneNumber(int phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
 	public int getId() {
-		return this.id;
+		return id;
 	}
 
-	/**
-	 * 
-	 * @param id
-	 */
 	public void setId(int id) {
 		this.id = id;
 	}
 
 	public String getInitials() {
-		return this.initials;
+		return initials;
 	}
 
-	/**
-	 * 
-	 * @param initials
-	 */
 	public void setInitials(String initials) {
 		this.initials = initials;
 	}
-
 }
