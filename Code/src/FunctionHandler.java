@@ -267,9 +267,10 @@ public class FunctionHandler {
 
 
 		System.out.println("Enter Username: ");
-		username = input.next();
+		username = input.nextLine();
 
 		for(Employee employee: employeeList){
+			System.out.println(employee.getUserName());
 			if (username.equalsIgnoreCase(employee.getUserName())){
 				password = employee.getPassword();
 				foundUser = true;
