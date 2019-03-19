@@ -252,4 +252,59 @@ public class FunctionHandler {
 			System.out.println(e);
 		}
 	}
+
+	public int login(){
+		Scanner input = new Scanner(System.in);
+		String username;
+		String password = "";
+		String passwordInput;
+		boolean foundUser = false;
+		boolean admin = false;
+		int toReturn = 3;
+
+
+		System.out.println("Enter Username: ");
+		username = input.nextLine();
+
+		for(Employee employee: employeeList){
+			System.out.println(employee.getUserName());
+			if (username.equalsIgnoreCase(employee.getUserName())){
+				password = employee.getPassword();
+				foundUser = true;
+				if (employee.isAdmin() == true){
+					admin = true;
+				}
+			}
+		}
+		if (foundUser == false){
+			System.out.println("No user found");
+		}
+		else{
+			System.out.println("Enter password: ");
+			passwordInput = input.next();
+			if(passwordInput.equals(password)){
+				if (admin == true){
+					toReturn = 0;
+				}
+				else {
+					toReturn = 1;
+				}
+			}
+			else{
+				System.out.println("Password does not match the username!!");
+			}
+		}
+
+		return toReturn;
+
+	}
+
+
+	public void getWaitingList(){
+		for (Child child : childList){
+			if(child.isWaitingList()){
+				System.out.println(child.getFirstName() + " " + child.getLastName() + " " + child.getCpr());
+			}
+		}
+	}
 }
