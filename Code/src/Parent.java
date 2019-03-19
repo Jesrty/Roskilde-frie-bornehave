@@ -34,4 +34,14 @@ public class Parent extends Person {
 	public void setCpr(int cpr) {
 		this.cpr = cpr;
 	}
+
+	public String toString(String option){
+		String text = "";
+
+		if(option.toLowerCase() == "save"){
+			text = getFirstName() + "," + getLastName() + "," + getPhoneNumber() + "," + getMail() + "," + getCpr();
+		}
+
+		return text;
+	}
 }

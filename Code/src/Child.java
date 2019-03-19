@@ -46,6 +46,22 @@ public class Child extends Person {
 		this.date = date;
 	}
 
+	public String getWaitingListDate() {
+		return waitingListDate;
+	}
+
+	public void setWaitingListDate(String waitingListDate) {
+		this.waitingListDate = waitingListDate;
+	}
+
+	public String toString(String option){
+		String text = "";
+		if(option.toLowerCase() == "save"){
+			text = getFirstName() + "," + getFirstName() + "," + getCpr() + "," + isWaitingList() + "," + getWaitingListDate();
+		}
+		return text;
+	}
+
 	/* --- denne sektion er "lånt" fra internettet --- */
 	public static int getDiffDays(Date first, Date last){
 		long difference = last.getTime() - first.getTime();

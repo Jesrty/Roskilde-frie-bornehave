@@ -64,4 +64,22 @@ public class Employee extends Person {
 	public void setAdmin(boolean admin) {
 		this.admin = admin;
 	}
+
+	//int id, String firstName, String lastName, String userName, String password, int phoneNumber, String initials, boolean admin
+	public String toString(String option){
+	    String text = "";
+
+	    if(option.toLowerCase() == "save"){
+	        text = getId() + "," +
+                    getFirstName() + "," +
+                    getLastName() + "," +
+                    getUserName() + "," +
+                    getPassword() + "," +
+                    getPhoneNumber() + "," +
+                    getInitials() + "," +
+                    isAdmin();
+        }
+
+	    return text;
+    }
 }

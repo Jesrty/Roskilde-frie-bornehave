@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -9,10 +10,43 @@ public class FunctionHandler {
 	List<Employee> employeeList = new ArrayList<Employee>();
 	List<Child> childList = new ArrayList<Child>();
 	List<Parent> parentList = new ArrayList<Parent>();
+	Scanner userInput = new Scanner(System.in);
 
 	public void createChild() {
 		// TODO - implement FunctionHandler.createChild
-		throw new UnsupportedOperationException();
+		int placeInInfo = 0;
+		String finalString = "";
+
+		String[] infoNeeded = {
+				"Enter first name",
+				"Enter last name",
+				"Enter CPR number (05-10-2010)",
+				"Enter waiting list (Yes or No)",
+				"Enter witing list date (05-10-2010)"
+		};
+
+		do{
+			System.out.println(infoNeeded[placeInInfo]);
+			if(placeInInfo != 5){
+				finalString += userInput.nextLine();
+				if(placeInInfo != 4){
+					finalString += ",";
+				}
+			}
+			placeInInfo++;
+		}while(placeInInfo != 5);
+
+		Object[] info = finalString.split(",");
+		childList.add(new Child(
+				info[0].toString(),
+				info[1].toString(),
+				Integer.parseInt(info[2].toString()),
+				Boolean.parseBoolean(info[3].toString()),
+				info[4].toString()
+		));
+
+		//saving all the childs info back to file
+		saveChildren();
 	}
 
 	/**
@@ -31,9 +65,17 @@ public class FunctionHandler {
 	public void getChildInfo(int cpr) {
 		// TODO - implement FunctionHandler.getChildInfo
 		for(int i = 0; childList.size() > i; i++){
-
+			int childCpr = childList.get(i).getCpr();
+			if(childCpr == cpr){
+				String firstName = childList.get(i).getFirstName();
+				String lastName = childList.get(i).getLastName();
+				System.out.println("Found the child with the corresponding CPR number.");
+				System.out.println("- " + firstName + " " + lastName);
+			}else if(childList.size() == i){
+				System.out.println("No child with the CPR. Did you type right?");
+			}
 		}
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -42,11 +84,25 @@ public class FunctionHandler {
 	 */
 	public void getPhoneList(boolean child) {
 		// TODO - implement FunctionHandler.getPhoneList
+
+		if(child == true) {
+
+		}else if(child == false){
+			for(int i = 0; i < employeeList.size(); i++){
+				System.out.println("- " + employeeList.get(i).getInitials() + " +45" + employeeList.get(i).getPhoneNumber());
+			}
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
 	public void createEmployee() {
 		// TODO - implement FunctionHandler.createEmployee
+
+		int newestId = (employeeList.get(employeeList.size()).getId() + 1);
+
+		//saving all the employees info back to file
+		saveEmployees();
 		throw new UnsupportedOperationException();
 	}
 
@@ -56,6 +112,9 @@ public class FunctionHandler {
 	 */
 	public void editEmployee(int id) {
 		// TODO - implement FunctionHandler.editEmployee
+
+		//saving all the employees info back to file
+		saveEmployees();
 		throw new UnsupportedOperationException();
 	}
 
@@ -87,7 +146,7 @@ public class FunctionHandler {
 	}
 
 	public void checkArraySizes(){
-		if(childList.size() == 0 && parentList.size() == 0 && employeeList.size() == 0){
+		if(childList.size() == 0 || parentList.size() == 0 || employeeList.size() == 0){
 			populateChilds();
 			populateParents();
 			populateEmployees();
@@ -99,7 +158,7 @@ public class FunctionHandler {
 		parentList.clear();
 
 		try {
-			Scanner scan = new Scanner(new File("children.txt"));
+			Scanner scan = new Scanner(new File("parents.txt"));
 			do{
 				Object[] info = scan.nextLine().split(",");
 				parentList.add(new Parent(
@@ -113,6 +172,17 @@ public class FunctionHandler {
 
 		}catch (FileNotFoundException e){
 			System.out.println("Ingen fil fundet");
+		}
+	}
+
+	public void saveParents(){
+		try{
+			PrintStream file = new PrintStream(new File("parents.txt"));
+				for(int i = 0; i < parentList.size(); i++){
+					file.println(parentList.get(i).toString("save"));
+				}
+		}catch (FileNotFoundException e){
+			System.out.println(e);
 		}
 	}
 
@@ -135,6 +205,18 @@ public class FunctionHandler {
 
 		}catch (FileNotFoundException e){
 			System.out.println("Ingen fil fundet");
+		}
+	}
+
+	public void saveChildren(){
+		try{
+			PrintStream fileSave = new PrintStream(new File("children.txt"));
+			for(int i = 0; i < childList.size(); i++){
+				System.out.println(childList.get(i).toString("save"));
+				fileSave.println(childList.get(i).toString("save"));
+			}
+		} catch (FileNotFoundException e){
+			System.out.println(e);
 		}
 	}
 
@@ -163,6 +245,14 @@ public class FunctionHandler {
 		}
 	}
 
-
-
+	public void saveEmployees(){
+		try{
+			PrintStream file = new PrintStream(new File("employees.txt"));
+			for(int i = 0; i < employeeList.size(); i++){
+				file.println(employeeList.get(i).toString("save"));
+			}
+		}catch (FileNotFoundException e){
+			System.out.println(e);
+		}
+	}
 }
