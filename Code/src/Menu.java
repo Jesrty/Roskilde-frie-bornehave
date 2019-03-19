@@ -4,8 +4,10 @@ public class Menu {
 
 	public Menu() {
 
-	    Scanner input = new Scanner(System.in);
 	    FunctionHandler fh = new FunctionHandler();
+	    fh.checkArraySizes();
+
+	    Scanner input = new Scanner(System.in);
 
 
 	    int loginLvl = fh.login();

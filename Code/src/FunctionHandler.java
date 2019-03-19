@@ -258,7 +258,7 @@ public class FunctionHandler {
 
 	public int login(){
 		Scanner input = new Scanner(System.in);
-		String username;
+		String username = "sandra";
 		String password = "";
 		String passwordInput;
 		boolean foundUser = false;
@@ -268,13 +268,16 @@ public class FunctionHandler {
 
 		System.out.println("Enter Username: ");
 		username = input.nextLine();
+		System.out.println(username);
 
-		for(Employee employee: employeeList){
-			System.out.println(employee.getUserName());
-			if (username.equalsIgnoreCase(employee.getUserName())){
-				password = employee.getPassword();
+		System.out.println("Employee size " + employeeList.size());
+		for(int i = 0; i < employeeList.size(); i++){
+			System.out.println("test");
+			System.out.println(employeeList.get(i).getUserName());
+			if (username.equalsIgnoreCase(employeeList.get(i).getUserName())){
+				password = employeeList.get(i).getPassword();
 				foundUser = true;
-				if (employee.isAdmin() == true){
+				if (employeeList.get(i).isAdmin() == true){
 					admin = true;
 				}
 			}
