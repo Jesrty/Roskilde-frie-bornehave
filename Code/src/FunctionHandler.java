@@ -304,6 +304,10 @@ public class FunctionHandler {
 
 
 	public void getWaitingList(){
-
+		for (Child child : childList){
+			if(child.isWaitingList()){
+				System.out.println(child.getFirstName() + " " + child.getLastName() + " " + child.getCpr());
+			}
+		}
 	}
 }
