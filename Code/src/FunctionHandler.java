@@ -98,6 +98,56 @@ public class FunctionHandler {
 
 	public void createEmployee() {
 		int newestId = (employeeList.get(employeeList.size() - 1).getId() + 1);
+
+		int placeInInfo = 0;
+		String finalString = "";
+
+		//int id, String firstName, String lastName, String userName, String password, int phoneNumber, String initials, boolean admin
+		String[] infoNeeded = {
+				"Enter first name",
+				"Enter last name",
+				"Enter username",
+				"Enter password",
+				"Enter phone number",
+				"Enter intials"
+		};
+
+		do{
+			System.out.println(infoNeeded[placeInInfo]);
+			if(placeInInfo != 6){
+				finalString += userInput.nextLine();
+				if(placeInInfo != 5){
+					finalString += ",";
+				}
+			}
+			placeInInfo++;
+		}while(placeInInfo != 6);
+
+		Object[] info = finalString.split(",");
+
+		for(int i = 0; i < employeeList.size(); i++){
+			if(employeeList.get(i).getInitials().equalsIgnoreCase(info[5].toString())){
+				int j = 0;
+				System.out.println("The choosen intials is taken. Please try again.");
+				do{
+					if(j > 0){ System.out.println("The choosen intials is taken. Please try again."); }
+					info[5] = userInput.nextLine();
+					j++;
+				}while(employeeList.get(i).getInitials().equalsIgnoreCase(info[5].toString()));
+			}
+		}
+
+		employeeList.add(new Employee(
+				newestId,
+				info[0].toString(),
+				info[1].toString(),
+				info[2].toString(),
+				info[3].toString(),
+				Integer.parseInt(info[4].toString()),
+				info[5].toString(),
+				Boolean.parseBoolean(info[3].toString())
+		));
+
 		
 		//saving all the employees info back to file
 		saveEmployees();
