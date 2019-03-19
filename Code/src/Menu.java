@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class Menu {
 
 	public Menu() {
-
 	    FunctionHandler fh = new FunctionHandler();
 	    fh.checkArraySizes();
+	    fh.scheduleFeeder();
 
 	    Scanner input = new Scanner(System.in);
 
