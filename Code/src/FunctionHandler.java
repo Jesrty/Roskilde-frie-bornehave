@@ -353,5 +353,18 @@ public class FunctionHandler {
 		}
 	}
 
+    public void saveSchedule(){
+        try{
+            PrintStream file = new PrintStream(new File("schedule.txt"));
+            for(Schedule schedule : scheduleList){
+                file.println(schedule.getWeek());
+            }
+        }catch (FileNotFoundException e){
+            System.out.println(e);
+        }
+    }
 
+	public void changeWeekSchedule(int week){
+
+    }
 }
