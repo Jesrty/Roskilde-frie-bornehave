@@ -98,7 +98,7 @@ public class Menu {
                         }
                     }
                     else if (option1.equals("3")) {
-                        System.out.println("[1 = Create employee]\n[2 = Get employee][3 = View employee phone list]");
+                        System.out.println("[1 = Create employee]\n[2 = Edit employee]\n[3 = View employee phone list]");
                         String option2 = input.nextLine();
 
                         if (option2.equals("1") && loginLvl == 0) {
@@ -107,7 +107,7 @@ public class Menu {
                         else if (option2.equals("2") && loginLvl == 0) {
                             System.out.println("Type id of the employee");
                             String employeeID = input.nextLine();
-                            fh.getEmployee(Integer.parseInt(employeeID));
+                            fh.editEmployee(Integer.parseInt(employeeID));
                         }
                         else if (option2.equals("3")) {
                             fh.getPhoneList(false);
