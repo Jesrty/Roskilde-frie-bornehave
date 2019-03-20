@@ -414,10 +414,6 @@ public class FunctionHandler {
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 *
-	 * @param week
-	 */
 	public void editSchedule(int week) {
 		// TODO - implement FunctionHandler.editSchedule
 		throw new UnsupportedOperationException();
@@ -648,9 +644,5 @@ public class FunctionHandler {
         }catch (FileNotFoundException e){
             System.out.println(e);
         }
-    }
-
-	public void changeWeekSchedule(int week){
-
     }
 }
