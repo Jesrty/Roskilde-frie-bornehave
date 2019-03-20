@@ -3,16 +3,9 @@ import java.util.Scanner;
 public class Menu {
 
 	public Menu() {
-	    FunctionHandler fh = new FunctionHandler();
-	    fh.checkArraySizes();
-	    fh.scheduleFeeder();
-
 	    Scanner input = new Scanner(System.in);
-<<<<<<< HEAD
-=======
 	    FunctionHandler fh = new FunctionHandler();
 	    fh.checkArraySizes();
->>>>>>> c0b3b99f34b8e06c1e12eb3d2d5934b9c1a31ab2
 
         while(true) {
             int loginLvl = fh.login();
