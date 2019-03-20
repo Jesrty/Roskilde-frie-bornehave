@@ -98,13 +98,10 @@ public class FunctionHandler {
 	}
 
 	public void createEmployee() {
-		// TODO - implement FunctionHandler.createEmployee
-
-		int newestId = (employeeList.get(employeeList.size()).getId() + 1);
-
+		int newestId = (employeeList.get(employeeList.size() - 1).getId() + 1);
+		
 		//saving all the employees info back to file
 		saveEmployees();
-		throw new UnsupportedOperationException();
 	}
 
 	/**
