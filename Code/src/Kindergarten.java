@@ -27,8 +27,11 @@ public class Kindergarten extends FunctionHandler{
             //System.out.println(employeeList.get(i).getUserName());
         }
 
+<<<<<<< HEAD
 =======
         //Menu m = new Menu();
 >>>>>>> develop
+=======
+>>>>>>> c0b3b99f34b8e06c1e12eb3d2d5934b9c1a31ab2
     }
 }

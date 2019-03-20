@@ -1,2 +1,6 @@
 1,Sandra,Sand,sandra,1234,12345678,SS,true
+<<<<<<< HEAD
 2,Daniel,Sand,daniel,1234,12345678,DS,true
+=======
+2,jesper,ravn,jesper,123,12345678,JR,false
+>>>>>>> c0b3b99f34b8e06c1e12eb3d2d5934b9c1a31ab2
