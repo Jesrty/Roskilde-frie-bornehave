@@ -61,7 +61,7 @@ public class Menu {
                         }
                     }
                     else if (option1.equals("2")) {
-                        System.out.println("[1 = Create child]\n[2 = Edit child]\n[3 = View child information]\n[4 = View phone list]\n[5 = View waiting list]");
+                        System.out.println("[1 = Create child]\n[2 = Edit child]\n[3 = Search child information]\n[4 = View phone list]\n[5 = View waiting list]");
                         String option2 = input.nextLine();
 
                         if (option2.equals("1") && loginLvl == 0) {
