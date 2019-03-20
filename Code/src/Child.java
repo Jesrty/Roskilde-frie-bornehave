@@ -57,7 +57,7 @@ public class Child extends Person {
 	public String toString(String option){
 		String text = "";
 		if(option.toLowerCase() == "save"){
-			text = getFirstName() + "," + getFirstName() + "," + getCpr() + "," + isWaitingList() + "," + getWaitingListDate();
+			text = getFirstName() + "," + getLastName() + "," + getCpr() + "," + isWaitingList() + "," + getWaitingListDate();
 		}
 		return text;
 	}

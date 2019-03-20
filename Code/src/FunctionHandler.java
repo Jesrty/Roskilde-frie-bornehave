@@ -14,41 +14,101 @@ public class FunctionHandler {
 	Scanner userInput = new Scanner(System.in);
 	ArrayList<Schedule> scheduleList = new ArrayList<Schedule>();
 
+	public boolean isInteger(String s) {
+		try {
+			Integer.parseInt(s);
+		} catch(NumberFormatException e) {
+			return false;
+		} catch(NullPointerException e) {
+			return false;
+		}
+		// only got here if we didn't return false
+		return true;
+	}
+
 	public void createChild() {
 		// TODO - implement FunctionHandler.createChild
 		int placeInInfo = 0;
-		String finalString = "";
+		String finalStringChild = "";
 
-		String[] infoNeeded = {
+		String[] infoNeededChild = {
 				"Enter first name",
 				"Enter last name",
-				"Enter CPR number (05-10-2010)",
+				"Enter CPR number (05102010-0000)",
 				"Enter waiting list (Yes or No)",
 				"Enter witing list date (05-10-2010)"
 		};
 
 		do{
-			System.out.println(infoNeeded[placeInInfo]);
+			System.out.println(infoNeededChild[placeInInfo]);
 			if(placeInInfo != 5){
-				finalString += userInput.nextLine();
+				finalStringChild += userInput.nextLine();
 				if(placeInInfo != 4){
-					finalString += ",";
+					finalStringChild += ",";
 				}
 			}
 			placeInInfo++;
 		}while(placeInInfo != 5);
 
-		Object[] info = finalString.split(",");
+		Object[] infoChild = finalStringChild.split(",");
+		System.out.println(Arrays.toString(infoChild));
+		System.out.println(infoChild[0]);
+		System.out.println(infoChild[1]);
 		childList.add(new Child(
-				info[0].toString(),
-				info[1].toString(),
-				Integer.parseInt(info[2].toString()),
-				Boolean.parseBoolean(info[3].toString()),
-				info[4].toString()
+				infoChild[0].toString(),
+				infoChild[1].toString(),
+				Integer.parseInt(infoChild[2].toString()),
+				Boolean.parseBoolean(infoChild[3].toString()),
+				infoChild[4].toString()
 		));
 
-		//saving all the childs info back to file
+		System.out.println("How many parents does " + infoChild[0].toString() + " " + infoChild[1].toString() + " have?");
+		String numberOfParents = "";
+		int j = 0;
+
+		do{
+			if(j > 0){ System.out.println(numberOfParents + " is not a number. Please try again."); }
+			numberOfParents = userInput.nextLine();
+			j++;
+		}while(!isInteger(numberOfParents));
+
+		j = 0;
+		do{
+			placeInInfo = 0; //resetting the counter for the parent
+			String finalStringParent = "";
+			String[] infoNeededParents ={
+					"Enter parent first name",
+					"Enter parent last name",
+					"Enter parent phone number",
+					"Enter parent email address"
+			};
+
+			do{
+				System.out.println(infoNeededParents[placeInInfo]);
+				if(placeInInfo != 4){
+					finalStringParent += userInput.nextLine();
+					if(placeInInfo != 3){
+						finalStringParent += ",";
+					}
+				}
+				placeInInfo++;
+			}while(placeInInfo != 4);
+
+			Object[] infoParent = finalStringParent.split(",");
+			parentList.add(new Parent(
+					infoParent[0].toString(),
+					infoParent[1].toString(),
+					Integer.parseInt(infoParent[2].toString()),
+					infoChild[3].toString(),
+					Integer.parseInt(infoChild[2].toString())
+			));
+			j++;
+		}while(Integer.parseInt(numberOfParents) != j);
+
+
+		//saving all the childs and parents info back to file
 		saveChildren();
+		saveParents();
 	}
 
 	/**
@@ -392,7 +452,7 @@ public class FunctionHandler {
 							for(int k = 0; k < editInfo.length; k++){
 								System.out.println(" - (" + (k + 1) + ") " + editInfo[k] + ": " + info[k + 1].toString());
 							}
-							System.out.println("\n '" + option + "' is a invalid option. Please choose a number from 1 to 5 to edit information.\n - type exit to go back");
+							System.out.println("\n '" + option + "' is a invalid option. Please choose a number from 1 to 6 to edit information.\n - type exit to go back");
 						break;
 					}
 				}while(!option.equalsIgnoreCase("exit"));
