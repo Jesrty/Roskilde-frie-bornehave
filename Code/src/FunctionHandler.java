@@ -232,7 +232,7 @@ public class FunctionHandler {
 
 		for(int i = 0; i < childList.size(); i++){
 			int childCpr = childList.get(i).getCpr();
-
+ 
 			for(int j = 0; i < parentList.size(); j++){
 				int parentChildCpr = parentList.get(j).getCpr();
 
