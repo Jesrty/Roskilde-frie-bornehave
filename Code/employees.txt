@@ -1,1 +1,2 @@
 1,Sandra,Sand,sandra,1234,12345678,SS,true
+2,Daniel,Sand,daniel,1234,12345678,DS,true
