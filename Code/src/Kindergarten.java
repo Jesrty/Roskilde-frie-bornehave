@@ -6,13 +6,14 @@ public class Kindergarten extends FunctionHandler{
         //checkArraySizes();
         Kindergarten kindergarten = new Kindergarten();
         kindergarten.run();
+        Menu m = new Menu();
     }
 
     public void run() {
         checkArraySizes();
 
 
-        System.out.println(childList.size());
+        //System.out.println(childList.size());
         //getChildInfo(20122011);
         //createChild();
 
@@ -21,8 +22,8 @@ public class Kindergarten extends FunctionHandler{
         }
         System.out.println(childList.size());
         for(int i = 0; employeeList.size() > i; i++){
-            System.out.println(employeeList.get(i).getUserName());
+            //System.out.println(employeeList.get(i).getUserName());
         }
-        Menu m = new Menu();
+
     }
 }

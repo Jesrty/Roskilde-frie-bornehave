@@ -11,6 +11,7 @@ public class FunctionHandler {
 	List<Child> childList = new ArrayList<Child>();
 	List<Parent> parentList = new ArrayList<Parent>();
 	Scanner userInput = new Scanner(System.in);
+	ArrayList<Schedule> scheduleList = new ArrayList<Schedule>();
 
 	public void createChild() {
 		// TODO - implement FunctionHandler.createChild
@@ -147,6 +148,7 @@ public class FunctionHandler {
 			populateChilds();
 			populateParents();
 			populateEmployees();
+			populateSchedule();
 		}
 	}
 
@@ -255,7 +257,7 @@ public class FunctionHandler {
 
 	public int login(){
 		Scanner input = new Scanner(System.in);
-		String username;
+		String username = "";
 		String password = "";
 		String passwordInput;
 		boolean foundUser = false;
@@ -265,13 +267,16 @@ public class FunctionHandler {
 
 		System.out.println("Enter Username: ");
 		username = input.nextLine();
+		System.out.println(username);
 
-		for(Employee employee: employeeList){
-			System.out.println(employee.getUserName());
-			if (username.equalsIgnoreCase(employee.getUserName())){
-				password = employee.getPassword();
+		System.out.println("Employee size " + employeeList.size());
+		for(int i = 0; i < employeeList.size(); i++){
+			System.out.println("test");
+			System.out.println(employeeList.get(i).getUserName());
+			if (username.equalsIgnoreCase(employeeList.get(i).getUserName())){
+				password = employeeList.get(i).getPassword();
 				foundUser = true;
-				if (employee.isAdmin() == true){
+				if (employeeList.get(i).isAdmin() == true){
 					admin = true;
 				}
 			}
@@ -307,4 +312,56 @@ public class FunctionHandler {
 			}
 		}
 	}
+
+	public void scheduleFeeder(){
+	    String[] dayCheck = {"mandag", "tirsdag", "onsdag", "torsdag", "fredag", "lørdag", "søndag"};
+	    try {
+            PrintStream schedule = new PrintStream(new File("schedule.txt"));
+            for (int i = 1; i <= 52; i++) {
+                for (int j = 0; j < 7; j++) {
+                    schedule.println(i + "," + dayCheck[j] + "," + "2019" + "," + "early" + "," + "placeholder");
+                    schedule.println(i + "," + dayCheck[j] + "," + "2019" + "," + "late" + "," + "placeholder");
+
+                }
+            }
+        }catch(FileNotFoundException e){System.out.print(e);}
+    }
+
+
+	public void populateSchedule(){
+		//make sure the array is empty
+		scheduleList.clear();
+
+		try {
+			Scanner scan = new Scanner(new File("schedule.txt"));
+			do{
+				Object[] info = scan.nextLine().split(",");
+				scheduleList.add(new Schedule(
+					Integer.parseInt(info[0].toString()), //Week number
+					info[1].toString(), //Day
+					Integer.parseInt(info[2].toString()), //Year
+					info[3].toString(), //Early or late
+					info[4].toString()	//String with shift info
+				));
+			}while (scan.hasNextLine());
+
+		}catch (FileNotFoundException e){
+			System.out.println("Ingen fil fundet");
+		}
+	}
+
+    public void saveSchedule(){
+        try{
+            PrintStream file = new PrintStream(new File("schedule.txt"));
+            for(Schedule schedule : scheduleList){
+                file.println(schedule.getWeek());
+            }
+        }catch (FileNotFoundException e){
+            System.out.println(e);
+        }
+    }
+
+	public void changeWeekSchedule(int week){
+
+    }
 }
