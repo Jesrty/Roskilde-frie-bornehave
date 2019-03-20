@@ -11,6 +11,7 @@ public class FunctionHandler {
 	List<Child> childList = new ArrayList<Child>();
 	List<Parent> parentList = new ArrayList<Parent>();
 	Scanner userInput = new Scanner(System.in);
+	ArrayList<Schedule> scheduleList = new ArrayList<Schedule>();
 
 	public void createChild() {
 		// TODO - implement FunctionHandler.createChild
@@ -150,6 +151,7 @@ public class FunctionHandler {
 			populateChilds();
 			populateParents();
 			populateEmployees();
+			populateSchedule();
 		}
 	}
 
@@ -258,7 +260,7 @@ public class FunctionHandler {
 
 	public int login(){
 		Scanner input = new Scanner(System.in);
-		String username = "sandra";
+		String username = "";
 		String password = "";
 		String passwordInput;
 		boolean foundUser = false;
@@ -327,4 +329,29 @@ public class FunctionHandler {
             }
         }catch(FileNotFoundException e){System.out.print(e);}
     }
+
+
+	public void populateSchedule(){
+		//make sure the array is empty
+		scheduleList.clear();
+
+		try {
+			Scanner scan = new Scanner(new File("schedule.txt"));
+			do{
+				Object[] info = scan.nextLine().split(",");
+				scheduleList.add(new Schedule(
+					Integer.parseInt(info[0].toString()), //Week number
+					info[1].toString(), //Day
+					Integer.parseInt(info[2].toString()), //Year
+					info[3].toString(), //Early or late
+					info[4].toString()	//String with shift info
+				));
+			}while (scan.hasNextLine());
+
+		}catch (FileNotFoundException e){
+			System.out.println("Ingen fil fundet");
+		}
+	}
+
+
 }

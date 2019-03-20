@@ -13,7 +13,7 @@ public class Kindergarten extends FunctionHandler{
         checkArraySizes();
 
 
-        System.out.println(childList.size());
+        //System.out.println(childList.size());
         //getChildInfo(20122011);
         //createChild();
 

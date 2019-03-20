@@ -6,6 +6,15 @@ public class Schedule {
 	private String time;
 	private String shift;
 
+	public Schedule(int week, String day, int year, String time, String shift){
+		this.week = week;
+		this.day = day;
+		this.year = year;
+		this.time = time;
+		this.shift = shift;
+
+	}
+
 	public String getDay() {
 		return day;
 	}
