@@ -6,6 +6,9 @@ public class Kindergarten extends FunctionHandler{
         Kindergarten kindergarten = new Kindergarten();
         kindergarten.run();
         Menu m = new Menu();
+
+
+
     }
 
     public void run() {
@@ -27,8 +30,5 @@ public class Kindergarten extends FunctionHandler{
         //editChild(20122011);
         //editEmployee(1);
 
-        for(int i = 0; i < childList.size(); i++){
-            System.out.println(Arrays.toString(childList.get(i).toString("save").split(",")));
-        }
     }
 }

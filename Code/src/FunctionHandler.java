@@ -782,6 +782,7 @@ public class FunctionHandler {
 	public void scheduleFeeder(){
 	    String[] dayCheck = {"monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"};
 	    try {
+	    	System.out.println("Har kørt");
             PrintStream schedule = new PrintStream(new File("schedule.txt"));
             for (int i = 1; i <= 52; i++) {
                 for (int j = 0; j < 7; j++) {
@@ -790,7 +791,9 @@ public class FunctionHandler {
 
                 }
             }
+			System.out.println("Har kørt");
         }catch(FileNotFoundException e){System.out.print(e);}
+
     }
 
 

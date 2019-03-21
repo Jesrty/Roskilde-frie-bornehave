@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b4d4071-4351-4bb8-b4a5-27a9647c8272" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Roskilde-frie-bornehave/FunctionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Roskilde-frie-bornehave/FunctionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Roskilde-frie-bornehave/Kindergarten.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Roskilde-frie-bornehave/Kindergarten.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schedule.txt" beforeDir="false" afterPath="$PROJECT_DIR$/schedule.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FunctionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FunctionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kindergarten.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kindergarten.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,58 +17,28 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FunctionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1472">
-              <caret line="209" column="44" lean-forward="true" selection-start-line="209" selection-start-column="44" selection-end-line="209" selection-end-column="44" />
+            <state relative-caret-position="170">
+              <caret line="793" column="43" selection-start-line="793" selection-start-column="43" selection-end-line="793" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#266#276#0" expanded="true" />
-                <element signature="e#318#325#0" expanded="true" />
-                <element signature="e#369#377#0" expanded="true" />
-                <element signature="e#475#485#0" expanded="true" />
+                <element signature="e#17244#17252#0" expanded="true" />
+                <element signature="e#17307#17315#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Kindergarten.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+            <state relative-caret-position="136">
+              <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="65" lean-forward="true" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/children.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/employees.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/parents.txt">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -72,14 +47,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/schedule.txt">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Parent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
+            <state relative-caret-position="293">
               <caret line="41" column="116" selection-start-line="41" selection-start-column="116" selection-end-line="41" selection-end-column="116" />
               <folding>
                 <element signature="e#571#572#0" expanded="true" />
@@ -94,7 +64,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Schedule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-53">
+            <state>
               <caret column="13" selection-start-column="13" selection-end-column="13" />
             </state>
           </provider>
@@ -131,9 +101,9 @@
         <option value="$PROJECT_DIR$/employees.txt" />
         <option value="$PROJECT_DIR$/src/Child.java" />
         <option value="$PROJECT_DIR$/children.txt" />
-        <option value="$PROJECT_DIR$/src/Kindergarten.java" />
         <option value="$PROJECT_DIR$/src/Menu.java" />
         <option value="$PROJECT_DIR$/src/FunctionHandler.java" />
+        <option value="$PROJECT_DIR$/src/Kindergarten.java" />
       </list>
     </option>
   </component>
@@ -151,8 +121,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -174,12 +142,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553155288693" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553159940356" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -187,6 +157,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -227,17 +198,26 @@
       <workItem from="1552908338378" duration="508000" />
       <workItem from="1552909013331" duration="743000" />
       <workItem from="1552910250453" duration="355000" />
+      <workItem from="1553157810957" duration="1546000" />
     </task>
+    <task id="LOCAL-00001" summary="Andreas' version">
+      <created>1553158038301</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1553158038301</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38585000" />
+    <option name="totallyTimeSpent" value="40131000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49920255" visible="true" weight="0.25946277" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49920255" visible="true" weight="0.2639676" />
       <window_info id="Structure" order="1" sideWeight="0.50079745" side_tool="true" weight="0.25946277" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -247,7 +227,7 @@
       <window_info id="Learn" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" visible="true" weight="0.3285968" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -255,7 +235,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3285968" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50061053" side_tool="true" weight="0.32941177" />
       <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.32941177" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32941177" />
@@ -305,6 +285,10 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Andreas' version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Andreas' version" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Leader.java" />
     <entry file="file://$PROJECT_DIR$/childs.txt" />
@@ -323,20 +307,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Schedule.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-53">
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/NumberFormatException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk/Contents/Home/lib/src.zip!/java.base/java/lang/NumberFormatException.java" />
     <entry file="file://$PROJECT_DIR$/out/production/Roskilde-frie-bornehave/Employee.class">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -401,25 +372,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Roskilde-frie-bornehave.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schedule.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Parent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="41" column="116" selection-start-line="41" selection-start-column="116" selection-end-line="41" selection-end-column="116" />
-          <folding>
-            <element signature="e#571#572#0" expanded="true" />
-            <element signature="e#588#589#0" expanded="true" />
-            <element signature="e#620#621#0" expanded="true" />
-            <element signature="e#641#642#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Child.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
@@ -444,13 +396,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Kindergarten.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Menu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
@@ -458,12 +403,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/parents.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/children.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
+        <state relative-caret-position="17">
           <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
         </state>
       </provider>
@@ -471,24 +413,69 @@
     <entry file="file://$PROJECT_DIR$/employees.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/parents.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="65" lean-forward="true" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
+        <state relative-caret-position="238">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+          <folding>
+            <element signature="e#4561#4565#0" expanded="true" />
+            <element signature="e#4565#4569#0" expanded="true" />
+            <element signature="e#4569#4573#0" expanded="true" />
+            <element signature="e#4573#4577#0" expanded="true" />
+            <element signature="e#4577#4581#0" expanded="true" />
+            <element signature="e#4581#4585#0" expanded="true" />
+            <element signature="e#4585#4589#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Roskilde-frie-bornehave.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Parent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="41" column="116" selection-start-line="41" selection-start-column="116" selection-end-line="41" selection-end-column="116" />
+          <folding>
+            <element signature="e#571#572#0" expanded="true" />
+            <element signature="e#588#589#0" expanded="true" />
+            <element signature="e#620#621#0" expanded="true" />
+            <element signature="e#641#642#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/FunctionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1472">
-          <caret line="209" column="44" lean-forward="true" selection-start-line="209" selection-start-column="44" selection-end-line="209" selection-end-column="44" />
+        <state relative-caret-position="170">
+          <caret line="793" column="43" selection-start-line="793" selection-start-column="43" selection-end-line="793" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#266#276#0" expanded="true" />
-            <element signature="e#318#325#0" expanded="true" />
-            <element signature="e#369#377#0" expanded="true" />
-            <element signature="e#475#485#0" expanded="true" />
+            <element signature="e#17244#17252#0" expanded="true" />
+            <element signature="e#17307#17315#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schedule.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11159" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Schedule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Kindergarten.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
         </state>
       </provider>
     </entry>
