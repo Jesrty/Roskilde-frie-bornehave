@@ -107,7 +107,7 @@ public class Menu {
                         else if (option2.equals("2") && loginLvl == 0) {
                             System.out.println("Type id of the employee");
                             String employeeID = input.nextLine();
-                            fh.getEmployee(Integer.parseInt(employeeID));
+                            fh.editEmployee(Integer.parseInt(employeeID));
                         }
                         else if (option2.equals("3")) {
                             fh.getPhoneList(false);

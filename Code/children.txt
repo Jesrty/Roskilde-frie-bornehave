@@ -1,5 +1,2 @@
-Peter,Peter,20122011,true,05-11-2012
-Jens,Jens,1234,true,20-10-2000
-lol,lol,1234,true,10-10-2010
-August,August,1308472345,false,2893759
-Agustus,Agustus,928364523,false,9283645981
+Peter,Olsen,20122011,true,05-11-2012
+Agustus,Petersen,928364523,false,9283645981
