@@ -8,6 +8,8 @@ import java.util.Scanner;
 
 public class FunctionHandler {
 
+	File schedule = new File("schedule.txt");
+	File employeeJ = new File("employees.txt");
 	List<Employee> employeeList = new ArrayList<Employee>();
 	List<Child> childList = new ArrayList<Child>();
 	List<Parent> parentList = new ArrayList<Parent>();
@@ -492,20 +494,134 @@ public class FunctionHandler {
 
 	/**
 	 *
+<<<<<<< HEAD
 	 * @param week
 	 */
-	public void editSchedule(int week) {
-		// TODO - implement FunctionHandler.editSchedule
+=======
+	 * @param id
+	 */
+	public String getEmployee(int id) {
+		// TODO - implement FunctionHandler.getEmployee
 		throw new UnsupportedOperationException();
 	}
+
+>>>>>>> 4dffef478a38051ea767bbe8f0bcf8c4ef8d00ea
+	public void editSchedule(int week) {
+
+		boolean test = false;
+
+		try{
+			Scanner sSchedule = new Scanner(schedule);
+			ArrayList<String> names = new ArrayList<String>();
+			ArrayList<String> scheduleHolder = new ArrayList<String>();
+			String namesDone = "";
+
+			System.out.println("Type the day you want to edit (fx monday)");
+			String day = userInput.nextLine();
+			System.out.println("pick time (early or late)");
+			String time = userInput.nextLine();
+
+
+
+			while(sSchedule.hasNextLine()){
+				String line = sSchedule.nextLine();
+				String[] split = line.split(",");
+				if(split[0].equals(Integer.toString(week)) & split[1].equals(day) & split[3].equals(time)){
+
+					while(true){
+						System.out.println("[1 = add worker]\n[2 = all workers are added]");
+						String option = userInput.nextLine();
+						if(option.equals("1")) {
+							test = false;
+							System.out.println("Type the initial of one worker");
+							String initial = userInput.nextLine();
+
+							Scanner sEmployee = new Scanner(employeeJ);
+							while(sEmployee.hasNextLine()){
+								String line1 = sEmployee.nextLine();
+								String[] split1 = line1.split(",");
+								if(initial.equals(split1[6])){
+									names.add(initial);
+									test = true;
+								}
+							}
+							if(test == false){
+								System.out.println("The initials is not in the system");
+							}
+							sEmployee.close();
+						}
+
+						else if(option.equals("2")){
+							break;
+						}
+						else{
+							System.out.println("You didn't pick a valid number");
+						}
+					}
+
+					for(int i = 0; i<names.size(); i++) {
+						if(i == 0) {
+							namesDone = names.get(i);
+						}
+						else{
+							namesDone = namesDone + " " + names.get(i);
+						}
+					}
+					scheduleHolder.add(split[0] + "," + split[1] + "," + split[2] + "," + split[3] + "," + namesDone);
+				}
+				else{
+					scheduleHolder.add(line);
+				}
+			}
+
+			PrintStream printSchedule = new PrintStream(schedule);
+            for(int j = 0; j<scheduleHolder.size(); j++){
+                printSchedule.println(scheduleHolder.get(j));
+            }
+
+		}
+		catch (FileNotFoundException e){
+			System.out.println("Something went worng!");
+		}
+			}
 
 	/**
 	 *
 	 * @param week
 	 */
 	public void viewSchedule(int week) {
-		// TODO - implement FunctionHandler.viewSchedule
-		throw new UnsupportedOperationException();
+		try {
+			Scanner sSchedule = new Scanner(schedule);
+			while (sSchedule.hasNextLine()) {
+				String line = sSchedule.nextLine();
+				String[] info = line.split(",");
+				if (info[0].equals(Integer.toString(week))) {
+					System.out.print("Week: " + info[0] + ". year: " + info[2] + "\n" + info[1] + ": " + info[3] + " [" + info[4] + "]");
+					line = sSchedule.nextLine();
+					info = line.split(",");
+					System.out.println(" " + info[3] + " [" + info[4] + "]");
+
+					while (sSchedule.hasNextLine()) {
+							line = sSchedule.nextLine();
+							info = line.split(",");
+						if(info[0].equals(Integer.toString(week))) {
+							System.out.print(info[1] + ": " + info[3] + " [" + info[4] + "]");
+							line = sSchedule.nextLine();
+							info = line.split(",");
+							System.out.println(" " + info[3] + " [" + info[4] + "]");
+						}
+					}
+				}
+			}
+			System.out.println("");
+			sSchedule.close();
+		}
+		catch (FileNotFoundException e){
+			System.out.println("a mistake was made!");
+		}
+
+
+
 	}
 
 	public void checkArraySizes(){
@@ -632,12 +748,8 @@ public class FunctionHandler {
 
 		System.out.println("Enter Username: ");
 		username = input.nextLine();
-		System.out.println(username);
 
-		System.out.println("Employee size " + employeeList.size());
 		for(int i = 0; i < employeeList.size(); i++){
-			System.out.println("test");
-			System.out.println(employeeList.get(i).getUserName());
 			if (username.equalsIgnoreCase(employeeList.get(i).getUserName())){
 				password = employeeList.get(i).getPassword();
 				foundUser = true;
@@ -678,7 +790,7 @@ public class FunctionHandler {
 	}
 
 	public void scheduleFeeder(){
-	    String[] dayCheck = {"mandag", "tirsdag", "onsdag", "torsdag", "fredag", "lørdag", "søndag"};
+	    String[] dayCheck = {"monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"};
 	    try {
             PrintStream schedule = new PrintStream(new File("schedule.txt"));
             for (int i = 1; i <= 52; i++) {
