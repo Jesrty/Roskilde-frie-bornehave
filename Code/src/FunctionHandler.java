@@ -494,18 +494,8 @@ public class FunctionHandler {
 
 	/**
 	 *
-<<<<<<< HEAD
 	 * @param week
 	 */
-=======
-	 * @param id
-	 */
-	public String getEmployee(int id) {
-		// TODO - implement FunctionHandler.getEmployee
-		throw new UnsupportedOperationException();
-	}
-
->>>>>>> 4dffef478a38051ea767bbe8f0bcf8c4ef8d00ea
 	public void editSchedule(int week) {
 
 		boolean test = false;
