@@ -29,7 +29,6 @@ public class FunctionHandler {
 	}
 
 	public void createChild() {
-		// TODO - implement FunctionHandler.createChild
 		int placeInInfo = 0;
 		String finalStringChild = "";
 
@@ -38,7 +37,7 @@ public class FunctionHandler {
 				"Enter last name",
 				"Enter CPR number (05102010-0000)",
 				"Enter waiting list (Yes or No)",
-				"Enter witing list date (05-10-2010)"
+				"Enter waiting list date (05-10-2010)"
 		};
 
 		do{
@@ -54,13 +53,17 @@ public class FunctionHandler {
 
 		Object[] infoChild = finalStringChild.split(",");
 		System.out.println(Arrays.toString(infoChild));
-		System.out.println(infoChild[0]);
-		System.out.println(infoChild[1]);
+
+		boolean waitinglist = true;
+
+		if(infoChild[3].toString().equalsIgnoreCase("no")){
+			waitinglist = false;
+		}
 		childList.add(new Child(
 				infoChild[0].toString(),
 				infoChild[1].toString(),
 				Integer.parseInt(infoChild[2].toString()),
-				Boolean.parseBoolean(infoChild[3].toString()),
+				waitinglist,
 				infoChild[4].toString()
 		));
 
@@ -101,7 +104,7 @@ public class FunctionHandler {
 					infoParent[0].toString(),
 					infoParent[1].toString(),
 					Integer.parseInt(infoParent[2].toString()),
-					infoChild[3].toString(),
+					infoParent[3].toString(),
 					Integer.parseInt(infoChild[2].toString())
 			));
 			j++;
