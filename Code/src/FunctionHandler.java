@@ -227,20 +227,28 @@ public class FunctionHandler {
 		saveChildren();
 	}
 
-	/**
-	 *
-	 * @param cpr
-	 */
+	//finds child and parents by using child CPR and prints it
 	public void getChildInfo(int cpr) {
-		for(int i = 0; childList.size() > i; i++){
+
+		for(int i = 0; i < childList.size(); i++){
 			int childCpr = childList.get(i).getCpr();
-			if(childCpr == cpr){
-				String firstName = childList.get(i).getFirstName();
-				String lastName = childList.get(i).getLastName();
-				System.out.println("Found the child with the corresponding CPR number.");
-				System.out.println("- " + firstName + " " + lastName);
-			}else if(childList.size() == i){
-				System.out.println("No child with the CPR. Did you type right?");
+ 
+			for(int j = 0; i < parentList.size(); j++){
+				int parentChildCpr = parentList.get(j).getCpr();
+
+				if(childCpr == parentChildCpr){
+					String firstName = childList.get(i).getFirstName();
+					String lastName = childList.get(i).getLastName();
+					String pFirstName = parentList.get(j).getFirstName();
+					String pLastName = parentList.get(j).getFirstName();
+					int pPhone = parentList.get(j).getPhoneNumber();
+					String pMail = parentList.get(j).getMail();
+					System.out.println("Found the child with the corresponding CPR number.");
+					System.out.println("- " + firstName + " " + lastName);
+					System.out.println("- " + pFirstName + " " + pLastName + " " + pPhone + " " + pMail);
+				}else if(childList.size() == i) {
+					System.out.println("No child with the CPR. Did you type right?");
+				}
 			}
 		}
 	}
