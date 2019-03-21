@@ -5,15 +5,17 @@ public class Kindergarten extends FunctionHandler{
         //checkArraySizes();
         Kindergarten kindergarten = new Kindergarten();
         kindergarten.run();
-        Menu m = new Menu();
-
-
-
+        //Menu m = new Menu();
     }
 
     public void run() {
         checkArraySizes();
 
+        //createEmployee();
+        //editChild(928364523);
+        //getChildInfo(928364523);
+
+        editEmployee(3);
         //getPhoneList(true);
         //createChild();
 
