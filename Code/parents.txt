@@ -1,8 +1,3 @@
 Egen,Olsen,88888888,egon@olsen.genialt,20122011
 Jens,Olsen,923654,yes,928364523
 Olivia,oliven,20847592,yes,928364523
-Hej,Med,9378645,yes,93824756
-peter,peter,989898,yes,1232
-hanna,hanna,88888888,yes,123
-hanna2,hanna2,878787878,hotmail.com,4567
-nj,nej,234,fesfe,234

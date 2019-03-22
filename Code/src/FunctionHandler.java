@@ -125,12 +125,12 @@ public class FunctionHandler {
 
 		for(int i = 0; i < childList.size(); i++){
 			if(childList.get(i).getCpr() == cpr){
-				Object[] info = childList.get(i).toString("save").split(",");
+				Object[] childInfo = childList.get(i).toString("save").split(",");
 
 				int j = 0;
 				System.out.println("Please choose a number: \n");
 				do{
-					System.out.println(" - (" + (j + 1) + ") " + editInfo[j] + ": " + info[j].toString());
+					System.out.println(" - (" + (j + 1) + ") " + editInfo[j] + ": " + childInfo[j].toString());
 					j++;
 				}while(j != 5);
 
@@ -144,88 +144,117 @@ public class FunctionHandler {
 						case "1": //firstname
 							System.out.println("What should the new first name be?\n");
 							temp = userInput.nextLine();
-							System.out.println("Sure, you want to change " + info[0].toString() + " to " + temp + " - yes or no.");
+							System.out.println("Sure, you want to change " + childInfo[0].toString() + " to " + temp + " - yes or no.");
 							option = userInput.nextLine();
-
-							if(option.equalsIgnoreCase("yes")){
-								System.out.println("Changed " + info[1].toString() + " name to: " + temp);
-								childList.get(i).setFirstName(temp);
-								info[0] = temp;
-							}else if(option.equalsIgnoreCase("no")){
-								System.out.println("Ignoring any changes to " + info[0].toString() + "\'s first name");
-							}
-							break;
+                            do{
+                                if(option.equalsIgnoreCase("yes")){
+                                    System.out.println("Changed " + childInfo[1].toString() + " name to: " + temp);
+                                    childList.get(i).setFirstName(temp);
+                                    childInfo[0] = temp;
+                                    break;
+                                }else if(option.equalsIgnoreCase("no")){
+                                    System.out.println("Ignoring any changes to " + childInfo[0].toString() + "\'s first name");
+                                    break;
+                                } else {
+                                    System.out.println("'" + option + "' is not a valid option. Please choose yes or no.");
+                                }
+                            }while(!option.equalsIgnoreCase("yes") || !option.equalsIgnoreCase("no"));
+                        break;
 
 						case "2": //lastname
 							System.out.println("What should the new last name be?\n");
 							temp = userInput.nextLine();
-							System.out.println("Sure, you want to change " + info[1].toString() + " to " + temp + " - yes or no.");
+							System.out.println("Sure, you want to change " + childInfo[1].toString() + " to " + temp + " - yes or no.");
 							option = userInput.nextLine();
 
-							if(option.equalsIgnoreCase("yes")){
-								System.out.println("Changed " + info[1].toString() + " last name to: " + temp);
-								childList.get(i).setLastName(temp);
-								info[1] = temp;
-							}else if(option.equalsIgnoreCase("no")){
-								System.out.println("Ignoring any changes to " + info[1].toString() + " " + info[2].toString() +  " last name");
-							}
-							break;
+                            do{
+                                if(option.equalsIgnoreCase("yes")){
+                                    System.out.println("Changed " + childInfo[1].toString() + " last name to: " + temp);
+                                    childList.get(i).setLastName(temp);
+                                    childInfo[1] = temp;
+                                    break;
+                                }else if(option.equalsIgnoreCase("no")){
+                                    System.out.println("Ignoring any changes to " + childInfo[1].toString() + " " + childInfo[2].toString() +  " last name");
+                                    break;
+                                } else {
+                                    System.out.println("'" + option + "' is not a valid option. Please choose yes or no.");
+                                }
+                            }while(!option.equalsIgnoreCase("yes") || !option.equalsIgnoreCase("no"));
+                        break;
 
 						case "3": //CPR
 							System.out.println("What should the new CPR number be?\n");
 							temp = userInput.nextLine();
-							System.out.println("Sure, you want to change " + info[2].toString() + " to " + temp + " - yes or no.");
+							System.out.println("Sure, you want to change " + childInfo[2].toString() + " to " + temp + " - yes or no.");
 							option = userInput.nextLine();
 
-							if(option.equalsIgnoreCase("yes")){
-								System.out.println("Changed " + info[2].toString() + " CPR to: " + temp);
-								childList.get(i).setCpr(Integer.parseInt(temp));
-								info[2] = temp;
-							}else if(option.equalsIgnoreCase("no")){
-								System.out.println("Ignoring any changes to " + info[0].toString() + " " + info[1].toString() +  " CPR");
-							}
-							break;
+                            do{
+                                if(option.equalsIgnoreCase("yes")){
+                                    System.out.println("Changed " + childInfo[2].toString() + " CPR to: " + temp);
+                                    childList.get(i).setCpr(Integer.parseInt(temp));
+                                    childInfo[2] = temp;
+                                    break;
+                                }else if(option.equalsIgnoreCase("no")){
+                                    System.out.println("Ignoring any changes to " + childInfo[0].toString() + " " + childInfo[1].toString() +  " CPR");
+                                    break;
+                                } else {
+                                    System.out.println("'" + option + "' is not a valid option. Please choose yes or no.");
+                                }
+                            }while(!option.equalsIgnoreCase("yes") || !option.equalsIgnoreCase("no"));
+                        break;
 
 						case "4": //Waiting list
-							System.out.println("Is the child starting in kindergarten?\n");
+							System.out.println("Is the child starting in kindergarten now?\n");
 							temp = userInput.nextLine();
-							System.out.println("Sure, you want to change " + info[3].toString() + " to " + temp + " - yes or no.");
+							System.out.println("Sure, you want to change " + childInfo[3].toString() + " to " + temp + " - yes or no.");
 							option = userInput.nextLine();
 
-							if(option.equalsIgnoreCase("yes")){
-								System.out.println("Changed " + info[3].toString() + " waiting list to: " + temp);
-								childList.get(i).setWaitingList(false); //
-								info[3] = temp;
-							}else if(option.equalsIgnoreCase("no")){
-								System.out.println("Ignoring any changes to " + info[0].toString() + " " + info[1].toString() +  " waiting list");
-							}
-							break;
+                            do{
+                                if(option.equalsIgnoreCase("yes")){
+                                    System.out.println("Changed " + childInfo[3].toString() + " waiting list to: " + temp);
+                                    childList.get(i).setWaitingList(false); //
+                                    childInfo[3] = temp;
+                                    break;
+                                }else if(option.equalsIgnoreCase("no")){
+                                    System.out.println("Ignoring any changes to " + childInfo[0].toString() + " " + childInfo[1].toString() +  " waiting list");
+                                    break;
+                                } else {
+                                    System.out.println("'" + option + "' is not a valid option. Please choose yes or no.");
+                                }
+                            }while(!option.equalsIgnoreCase("yes") || !option.equalsIgnoreCase("no"));
+                        break;
 
 						case "5": //waiting list date
 							System.out.println("What should the new waiting list date be?\n");
 							temp = userInput.nextLine();
-							System.out.println("Sure, you want to change " + info[4].toString() + " to " + temp + " - yes or no.");
+							System.out.println("Sure, you want to change " + childInfo[4].toString() + " to " + temp + " - yes or no.");
 							option = userInput.nextLine();
 
-							if(option.equalsIgnoreCase("yes")){
-								System.out.println("Changed " + info[4].toString() + " waiting list date to: " + temp);
-								childList.get(i).setWaitingListDate(temp);
-								info[4] = temp;
-							}else if(option.equalsIgnoreCase("no")){
-								System.out.println("Ignoring any changes to " + info[0].toString() + " " + info[1].toString() +  " waiting list date");
-							}
-							break;
+                            do{
+                                if(option.equalsIgnoreCase("yes")){
+                                    System.out.println("Changed " + childInfo[4].toString() + " waiting list date to: " + temp);
+                                    childList.get(i).setWaitingListDate(temp);
+                                    childInfo[4] = temp;
+                                    break;
+                                }else if(option.equalsIgnoreCase("no")){
+                                    System.out.println("Ignoring any changes to " + childInfo[0].toString() + " " + childInfo[1].toString() +  " waiting list date");
+                                    break;
+                                } else {
+                                    System.out.println("'" + option + "' is not a valid option. Please choose yes or no.");
+                                }
+                            }while(!option.equalsIgnoreCase("yes") || !option.equalsIgnoreCase("no"));
+                        break;
 
 						case "exit":
 							option = "exit";
-							break;
+                        break;
 
 						default:
 							for(int k = 0; k < editInfo.length; k++){
-								System.out.println(" - (" + (k + 1) + ") " + editInfo[k] + ": " + info[k].toString());
+								System.out.println(" - (" + (k + 1) + ") " + editInfo[k] + ": " + childInfo[k].toString());
 							}
 							System.out.println(option + " is a invalid option. Please choose a number from 1 to 5 to edit information.\n- type exit to go back");
-							break;
+                        break;
 					}
 				}while(!option.equalsIgnoreCase("exit"));
 			}else if(i == childList.size()){
@@ -262,8 +291,6 @@ public class FunctionHandler {
 	 * @param child
 	 */
 	public void getPhoneList(boolean child) {
-		// TODO - implement FunctionHandler.getPhoneList
-
 		if(child == true) {
 			for(int c = 0; c < childList.size(); c++){
 				System.out.println(
@@ -304,7 +331,28 @@ public class FunctionHandler {
 		do{
 			System.out.println(infoNeeded[placeInInfo]);
 			if(placeInInfo != 6){
-				finalString += userInput.nextLine();
+
+			    if(placeInInfo == 5){
+                    String temp;
+                    boolean checkInitials = true;
+                    do {
+                        temp = userInput.nextLine();
+
+                        for (int l = 0; l < employeeList.size(); l++){
+                            if(employeeList.get(l).getInitials().equalsIgnoreCase(temp)){
+                                checkInitials = true;
+                                System.out.println("Those initials are taken. Try again:");
+                                break;
+                            }
+                            else{
+                                checkInitials = false;
+                            }
+                        }
+                    } while (checkInitials);
+                    finalString += temp;
+                }else{
+                    finalString += userInput.nextLine();
+                }
 				if(placeInInfo != 5){
 					finalString += ",";
 				}
@@ -313,24 +361,6 @@ public class FunctionHandler {
 		}while(placeInInfo != 6);
 
 		Object[] info = finalString.split(",");
-
-		/*String temp;
-		boolean checkInitials = true;
-		do {
-			temp = userInput.nextLine();
-
-			for (int l = 0; l < employeeList.size(); l++){
-				if(employeeList.get(l).getInitials().equalsIgnoreCase(temp)){
-					checkInitials = true;
-					System.out.println("Those initials are taken. Try again:");
-					break;
-				}
-				else{
-					checkInitials = false;
-				}
-			}
-		} while (checkInitials);*/
-
 
 		employeeList.add(new Employee(
 				newestId,
@@ -343,7 +373,6 @@ public class FunctionHandler {
 				Boolean.parseBoolean(info[3].toString())
 		));
 
-		
 		//saving all the employees info back to file
 		saveEmployees();
 	}
@@ -377,15 +406,22 @@ public class FunctionHandler {
 							System.out.println("What should the new first name be?\n");
 							temp = userInput.nextLine();
 							System.out.println("Sure, you want to change " + info[1].toString() + " to " + temp + " - yes or no.");
-							option = userInput.nextLine();
 
-							if (option.equalsIgnoreCase("yes")) {
-								employeeList.get(i).setFirstName(temp);
-								System.out.println("Changed " + info[1].toString() + " name to: " + temp);
-							} else if (option.equalsIgnoreCase("no")) {
-								System.out.println("Ignoring any changes to " + info[1].toString() + "\'s first name");
-							}
-							break;
+							do{
+                                option = userInput.nextLine();
+
+                                if (option.equalsIgnoreCase("yes")) {
+                                    employeeList.get(i).setFirstName(temp);
+                                    System.out.println("Changed " + info[1].toString() + " name to: " + temp);
+                                    break;
+                                } else if (option.equalsIgnoreCase("no")) {
+                                    System.out.println("Ignoring any changes to " + info[1].toString() + "\'s first name");
+                                    break;
+                                }else {
+                                    System.out.println("'" + option + "' is not a valid option. Please choose yes or no.");
+                                }
+                            }while(!option.equalsIgnoreCase("yes") || !option.equalsIgnoreCase("no"));
+                        break;
 
 						case "2": //lastname
 							System.out.println("What should the new last name be?\n");
@@ -393,13 +429,19 @@ public class FunctionHandler {
 							System.out.println("Sure, you want to change " + info[2].toString() + " to " + temp + " - yes or no.");
 							option = userInput.nextLine();
 
-							if (option.equalsIgnoreCase("yes")) {
-								employeeList.get(i).setLastName(temp);
-								System.out.println("Changed " + info[2].toString() + " last name to: " + temp);
-							} else if (option.equalsIgnoreCase("no")) {
-								System.out.println("Ignoring any changes to " + info[1].toString() + " " + info[2].toString() + " last name");
-							}
-							break;
+							do{
+                                if (option.equalsIgnoreCase("yes")) {
+                                    employeeList.get(i).setLastName(temp);
+                                    System.out.println("Changed " + info[2].toString() + " last name to: " + temp);
+                                    break;
+                                } else if (option.equalsIgnoreCase("no")) {
+                                    System.out.println("Ignoring any changes to " + info[1].toString() + " " + info[2].toString() + " last name");
+                                    break;
+                                }else {
+                                    System.out.println("'" + option + "' is not a valid option. Please choose yes or no.");
+                                }
+                            }while(!option.equalsIgnoreCase("yes") || !option.equalsIgnoreCase("no"));
+                        break;
 
 						case "3": //username
 							System.out.println("What should the new username be?\n");
@@ -407,13 +449,19 @@ public class FunctionHandler {
 							System.out.println("Sure, you want to change " + info[3].toString() + " to " + temp + " - yes or no.");
 							option = userInput.nextLine();
 
-							if (option.equalsIgnoreCase("yes")) {
-								employeeList.get(i).setUserName(temp);
-								System.out.println("Changed " + info[3].toString() + " username to: " + temp);
-							} else if (option.equalsIgnoreCase("no")) {
-								System.out.println("Ignoring any changes to " + info[1].toString() + " " + info[2].toString() + " username");
-							}
-							break;
+                            do{
+                                if (option.equalsIgnoreCase("yes")) {
+                                    employeeList.get(i).setUserName(temp);
+                                    System.out.println("Changed " + info[3].toString() + " username to: " + temp);
+                                    break;
+                                } else if (option.equalsIgnoreCase("no")) {
+                                    System.out.println("Ignoring any changes to " + info[1].toString() + " " + info[2].toString() + " username");
+                                    break;
+                                }else {
+                                    System.out.println("'" + option + "' is not a valid option. Please choose yes or no.");
+                                }
+                            }while(!option.equalsIgnoreCase("yes") || !option.equalsIgnoreCase("no"));
+                        break;
 
 						case "4": //password
 							System.out.println("What should the new password be?\n");
@@ -421,13 +469,19 @@ public class FunctionHandler {
 							System.out.println("Sure, you want to change " + info[4].toString() + " to " + temp + " - yes or no.");
 							option = userInput.nextLine();
 
-							if (option.equalsIgnoreCase("yes")) {
-								employeeList.get(i).setLastName(temp);
-								System.out.println("Changed " + info[4].toString() + " password to: " + temp);
-							} else if (option.equalsIgnoreCase("no")) {
-								System.out.println("Ignoring any changes to " + info[1].toString() + " " + info[2].toString() + " password");
-							}
-							break;
+                            do{
+                                if (option.equalsIgnoreCase("yes")) {
+                                    employeeList.get(i).setLastName(temp);
+                                    System.out.println("Changed " + info[4].toString() + " password to: " + temp);
+                                    break;
+                                } else if (option.equalsIgnoreCase("no")) {
+                                    System.out.println("Ignoring any changes to " + info[1].toString() + " " + info[2].toString() + " password");
+                                    break;
+                                }else {
+                                    System.out.println("'" + option + "' is not a valid option. Please choose yes or no.");
+                                }
+                            }while(!option.equalsIgnoreCase("yes") || !option.equalsIgnoreCase("no"));
+                        break;
 
 						case "5": //phone number
 							System.out.println("What should the new phone number be?\n");
@@ -435,13 +489,19 @@ public class FunctionHandler {
 							System.out.println("Sure, you want to change " + info[5].toString() + " to " + temp + " - yes or no.");
 							option = userInput.nextLine();
 
-							if (option.equalsIgnoreCase("yes")) {
-								employeeList.get(i).setLastName(temp);
-								System.out.println("Changed " + info[5].toString() + " phone number to: " + temp);
-							} else if (option.equalsIgnoreCase("no")) {
-								System.out.println("Ignoring any changes to " + info[1].toString() + " " + info[2].toString() + " phone number");
-							}
-							break;
+                            do{
+                                if (option.equalsIgnoreCase("yes")) {
+                                    employeeList.get(i).setLastName(temp);
+                                    System.out.println("Changed " + info[5].toString() + " phone number to: " + temp);
+                                    break;
+                                } else if (option.equalsIgnoreCase("no")) {
+                                    System.out.println("Ignoring any changes to " + info[1].toString() + " " + info[2].toString() + " phone number");
+                                    break;
+                                }else {
+                                    System.out.println("'" + option + "' is not a valid option. Please choose yes or no.");
+                                }
+                            }while(!option.equalsIgnoreCase("yes") || !option.equalsIgnoreCase("no"));
+                        break;
 
 						case "6": //intitials
 							System.out.println("What should the new initials be?");
@@ -465,27 +525,31 @@ public class FunctionHandler {
 							System.out.println("Sure, you want to change " + info[6].toString() + " to " + temp + " - yes or no.");
 							option = userInput.nextLine();
 
-							if (option.equalsIgnoreCase("yes")) {
-								employeeList.get(i).setInitials(temp);
-								info[6] = temp; //set the info to the info object array
-								System.out.println("Changed " + info[6].toString() + " initials to: " + temp);
-							} else if (option.equalsIgnoreCase("no")) {
-								System.out.println("Ignoring any changes to " + info[1].toString() + " " + info[2].toString() + " initials");
-							} else {
-								System.out.println("'" + option + "' is not a valid option. Please choose yes or no.");
-							}
-							break;
+                            do{
+                                if (option.equalsIgnoreCase("yes")) {
+                                    employeeList.get(i).setInitials(temp);
+                                    info[6] = temp; //set the info to the info object array
+                                    System.out.println("Changed " + info[6].toString() + " initials to: " + temp);
+                                    break;
+                                } else if (option.equalsIgnoreCase("no")) {
+                                    System.out.println("Ignoring any changes to " + info[1].toString() + " " + info[2].toString() + " initials");
+                                    break;
+                                } else {
+                                    System.out.println("'" + option + "' is not a valid option. Please choose yes or no.");
+                                }
+                            }while(!option.equalsIgnoreCase("yes") || !option.equalsIgnoreCase("no"));
+                        break;
 
 						case "exit":
 							option = "exit";
-							break;
+                        break;
 
 						default:
 							for (int k = 0; k < editInfo.length; k++) {
 								System.out.println(" - (" + (k + 1) + ") " + editInfo[k] + ": " + info[k + 1].toString());
 							}
 							System.out.println("\n '" + option + "' is a invalid option. Please choose a number from 1 to 6 to edit information.\n - type exit to go back");
-							break;
+                        break;
 					}
 				} while (!option.equalsIgnoreCase("exit"));
 			} else if(i == employeeList.size()) {
@@ -502,9 +566,7 @@ public class FunctionHandler {
 	 * @param week
 	 */
 	public void editSchedule(int week) {
-
 		boolean test = false;
-
 		try{
 			Scanner sSchedule = new Scanner(schedule);
 			ArrayList<String> names = new ArrayList<String>();
@@ -515,8 +577,6 @@ public class FunctionHandler {
 			String day = userInput.nextLine();
 			System.out.println("pick time (early or late)");
 			String time = userInput.nextLine();
-
-
 
 			while(sSchedule.hasNextLine()){
 				String line = sSchedule.nextLine();
@@ -614,9 +674,6 @@ public class FunctionHandler {
 		catch (FileNotFoundException e){
 			System.out.println("a mistake was made!");
 		}
-
-
-
 	}
 
 	public void checkArraySizes(){
@@ -732,7 +789,7 @@ public class FunctionHandler {
 	}
 
 	public int login(){
-		Scanner input = new Scanner(System.in);
+		//Scanner input = new Scanner(System.in);
 		String username = "";
 		String password = "";
 		String passwordInput;
@@ -740,9 +797,8 @@ public class FunctionHandler {
 		boolean admin = false;
 		int toReturn = 3;
 
-
 		System.out.println("Enter Username: ");
-		username = input.nextLine();
+		username = userInput.nextLine();
 
 		for(int i = 0; i < employeeList.size(); i++){
 			if (username.equalsIgnoreCase(employeeList.get(i).getUserName())){
@@ -755,31 +811,26 @@ public class FunctionHandler {
 		}
 		if (foundUser == false){
 			System.out.println("No user found");
-		}
-		else{
+		} else{
 			System.out.println("Enter password: ");
-			passwordInput = input.next();
+			passwordInput = userInput.next();
 			if(passwordInput.equals(password)){
 				if (admin == true){
 					toReturn = 0;
-				}
-				else {
+				} else {
 					toReturn = 1;
 				}
-			}
-			else{
+			} else{
 				System.out.println("Password does not match the username!!");
 			}
 		}
-
 		return toReturn;
-
 	}
 
 	public void getWaitingList(){
 		for (Child child : childList){
 			if(child.isWaitingList()){
-				System.out.println(child.getFirstName() + " " + child.getLastName() + " " + child.getCpr());
+				System.out.println("- " + child.getFirstName() + " " + child.getLastName() + " " + child.getCpr());
 			}
 		}
 	}
@@ -800,7 +851,6 @@ public class FunctionHandler {
         }catch(FileNotFoundException e){System.out.print(e);}
 
     }
-
 
 	public void populateSchedule(){
 		//make sure the array is empty
