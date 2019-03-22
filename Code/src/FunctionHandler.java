@@ -52,7 +52,6 @@ public class FunctionHandler {
 		}while(placeInInfo != 5);
 
 		Object[] infoChild = finalStringChild.split(",");
-		System.out.println(Arrays.toString(infoChild));
 
 		boolean waitinglist = true;
 
@@ -145,8 +144,9 @@ public class FunctionHandler {
 							System.out.println("What should the new first name be?\n");
 							temp = userInput.nextLine();
 							System.out.println("Sure, you want to change " + childInfo[0].toString() + " to " + temp + " - yes or no.");
-							option = userInput.nextLine();
+
 							do{
+                                option = userInput.nextLine();
 								if(option.equalsIgnoreCase("yes")){
 									System.out.println("Changed " + childInfo[1].toString() + " name to: " + temp);
 									childList.get(i).setFirstName(temp);
@@ -165,9 +165,9 @@ public class FunctionHandler {
 							System.out.println("What should the new last name be?\n");
 							temp = userInput.nextLine();
 							System.out.println("Sure, you want to change " + childInfo[1].toString() + " to " + temp + " - yes or no.");
-							option = userInput.nextLine();
 
 							do{
+                                option = userInput.nextLine();
 								if(option.equalsIgnoreCase("yes")){
 									System.out.println("Changed " + childInfo[1].toString() + " last name to: " + temp);
 									childList.get(i).setLastName(temp);
@@ -186,9 +186,9 @@ public class FunctionHandler {
 							System.out.println("What should the new CPR number be?\n");
 							temp = userInput.nextLine();
 							System.out.println("Sure, you want to change " + childInfo[2].toString() + " to " + temp + " - yes or no.");
-							option = userInput.nextLine();
 
 							do{
+                                option = userInput.nextLine();
 								if(option.equalsIgnoreCase("yes")){
 									System.out.println("Changed " + childInfo[2].toString() + " CPR to: " + temp);
 									childList.get(i).setCpr(Integer.parseInt(temp));
@@ -207,9 +207,9 @@ public class FunctionHandler {
 							System.out.println("Is the child starting in kindergarten now?\n");
 							temp = userInput.nextLine();
 							System.out.println("Sure, you want to change " + childInfo[3].toString() + " to " + temp + " - yes or no.");
-							option = userInput.nextLine();
 
 							do{
+                                option = userInput.nextLine();
 								if(option.equalsIgnoreCase("yes")){
 									System.out.println("Changed " + childInfo[3].toString() + " waiting list to: " + temp);
 									childList.get(i).setWaitingList(false); //
@@ -228,9 +228,9 @@ public class FunctionHandler {
 							System.out.println("What should the new waiting list date be?\n");
 							temp = userInput.nextLine();
 							System.out.println("Sure, you want to change " + childInfo[4].toString() + " to " + temp + " - yes or no.");
-							option = userInput.nextLine();
 
 							do{
+                                option = userInput.nextLine();
 								if(option.equalsIgnoreCase("yes")){
 									System.out.println("Changed " + childInfo[4].toString() + " waiting list date to: " + temp);
 									childList.get(i).setWaitingListDate(temp);
@@ -291,8 +291,6 @@ public class FunctionHandler {
 	 * @param child
 	 */
 	public void getPhoneList(boolean child) {
-		// TODO - implement FunctionHandler.getPhoneList
-
 		if(child == true) {
 			for(int c = 0; c < childList.size(); c++){
 				System.out.println(
@@ -411,7 +409,6 @@ public class FunctionHandler {
 
 							do{
 								option = userInput.nextLine();
-
 								if (option.equalsIgnoreCase("yes")) {
 									employeeList.get(i).setFirstName(temp);
 									System.out.println("Changed " + info[1].toString() + " name to: " + temp);
@@ -429,9 +426,9 @@ public class FunctionHandler {
 							System.out.println("What should the new last name be?\n");
 							temp = userInput.nextLine();
 							System.out.println("Sure, you want to change " + info[2].toString() + " to " + temp + " - yes or no.");
-							option = userInput.nextLine();
 
 							do{
+                                option = userInput.nextLine();
 								if (option.equalsIgnoreCase("yes")) {
 									employeeList.get(i).setLastName(temp);
 									System.out.println("Changed " + info[2].toString() + " last name to: " + temp);
@@ -449,9 +446,9 @@ public class FunctionHandler {
 							System.out.println("What should the new username be?\n");
 							temp = userInput.nextLine();
 							System.out.println("Sure, you want to change " + info[3].toString() + " to " + temp + " - yes or no.");
-							option = userInput.nextLine();
 
 							do{
+                                option = userInput.nextLine();
 								if (option.equalsIgnoreCase("yes")) {
 									employeeList.get(i).setUserName(temp);
 									System.out.println("Changed " + info[3].toString() + " username to: " + temp);
@@ -489,9 +486,9 @@ public class FunctionHandler {
 							System.out.println("What should the new phone number be?\n");
 							temp = userInput.nextLine();
 							System.out.println("Sure, you want to change " + info[5].toString() + " to " + temp + " - yes or no.");
-							option = userInput.nextLine();
 
 							do{
+                                option = userInput.nextLine();
 								if (option.equalsIgnoreCase("yes")) {
 									employeeList.get(i).setLastName(temp);
 									System.out.println("Changed " + info[5].toString() + " phone number to: " + temp);
@@ -525,9 +522,9 @@ public class FunctionHandler {
 							} while (checkInitials);
 
 							System.out.println("Sure, you want to change " + info[6].toString() + " to " + temp + " - yes or no.");
-							option = userInput.nextLine();
 
 							do{
+                                option = userInput.nextLine();
 								if (option.equalsIgnoreCase("yes")) {
 									employeeList.get(i).setInitials(temp);
 									info[6] = temp; //set the info to the info object array
@@ -753,7 +750,6 @@ public class FunctionHandler {
 		try{
 			PrintStream fileSave = new PrintStream(new File("children.txt"));
 			for(int i = 0; i < childList.size(); i++){
-				System.out.println(childList.get(i).toString("save"));
 				fileSave.println(childList.get(i).toString("save"));
 			}
 		} catch (FileNotFoundException e){
