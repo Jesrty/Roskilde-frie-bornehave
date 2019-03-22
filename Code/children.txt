@@ -1,3 +1,7 @@
 Peter,Olsen,20122011,true,05-11-2012
 Agustus,Petersen,928364523,false,11-03-2019
 karl,peter,93824756,false,20-20-29
+peter,peter,1232,true,20-20-29
+hanna,hanna,123,true,20-20-2000
+hanna,hanna2,4567,true,20202020
+peter,hanna,234,false,2

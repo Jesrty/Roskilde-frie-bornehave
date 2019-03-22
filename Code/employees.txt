@@ -1,4 +1,4 @@
 1,Sandra,Sand,sandra,1234,12345678,SS,true
-2,Daniel,Skrald,daniel,1234,12345678,DS,false
+2,Daniel,AK,daniel,1234,12345678,DS,true
 3,jesper,ravn,lol,123,12345678,JR,false
-4,peter,hansen,456,123,123465,PH,false
+4,peter,123,456,123,123465,PH,false
